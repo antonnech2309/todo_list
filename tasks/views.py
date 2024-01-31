@@ -17,11 +17,6 @@ class TaskListView(generic.ListView):
         return super().get(request, *args, **kwargs)
 
 
-def toggle_task_completion(task_id):
-    task = Task.objects.get(id=task_id)
-    task.is_completed = not task.is_completed
-
-
 class TaskCreateView(generic.CreateView):
     model = Task
     fields = "__all__"
